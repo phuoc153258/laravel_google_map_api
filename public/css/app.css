@@ -1,0 +1,48 @@
+html,
+body {
+    height: 100%;
+    margin: 0
+}
+
+#map_canvas {
+    height: 100%;
+}
+
+.btn {
+    background: none rgb(255, 255, 255);
+    border: 0px;
+    padding: 10px;
+    text-transform: none;
+    cursor: pointer;
+    border-radius: 2px;
+    box-shadow: rgb(0 0 0 / 30%) 0px 1px 4px -1px;
+    color: #666666;
+    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+}
+
+.draw {
+    z-index: 999;
+    width: 100%;
+    position: fixed;
+}
+
+.draw-action{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 1;
+    color: #fff;
+    background-color: rgba(68,68,68,.7);
+    padding: 0px 10px;
+}
+
+#drawpoly{
+    display: inline-block;
+    margin: 10px;
+}
+
+.d-none{
+    display: none;
+}
