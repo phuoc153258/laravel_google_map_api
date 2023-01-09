@@ -29,6 +29,9 @@
     </div>
     <div id="map_canvas"></div>
 
+    <script src="{{ asset('js/map.js') }}"></script>
+    <script src="{{ asset('js/DOM.js') }}"></script>
+    <script src="{{ asset('js/const.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 
