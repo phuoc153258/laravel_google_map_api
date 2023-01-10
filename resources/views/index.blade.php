@@ -20,7 +20,7 @@
             <p><strong>Draw a shape </strong>around the region(s) you would like to live in</p>
             <div class="draw-action-button">
                 <a class="btn" onclick="hiddenActionBar()">Cancel</a>
-                <a class="btn">Apply</a>
+                <a class="btn" onclick="getLocationByPolygon()">Apply</a>
             </div>
         </div>
         <div style="display: flex;justify-content: flex-end;">

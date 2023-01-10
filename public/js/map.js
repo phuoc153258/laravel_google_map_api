@@ -53,3 +53,15 @@ function addEventFreeHand(map) {
         });
     });
 }
+
+function getLocationByPolygon() {
+    places.forEach((value) => {
+        const isContaint = google.maps.geometry.poly.containsLocation(
+            value.latLng,
+            poly
+        );
+        if (isContaint) {
+            addMarker(value);
+        }
+    });
+}
