@@ -16,9 +16,22 @@ function enable(map) {
     });
 }
 
+function addEventFreeHand(map) {
+    $("#drawpoly").click(function (e) {
+        hideMarkers();
+        e.preventDefault();
+        disable(map);
+
+        showActionBar();
+
+        map.getDiv().addEventListener("mousedown", async function (e) {
+            drawFreeHand(map);
+        });
+    });
+}
+
 function drawFreeHand(map) {
     if (poly) clearPolygon();
-
     poly = new google.maps.Polyline({
         map: map,
         clickable: false,
@@ -36,21 +49,9 @@ function drawFreeHand(map) {
             map: map,
             path: path,
         });
-        google.maps.event.clearListeners(map, "mousedown");
+        google.maps.event.clearListeners(map.getDiv(), "mousedown");
+
         enable(map);
-    });
-}
-
-function addEventFreeHand(map) {
-    $("#drawpoly").click(function (e) {
-        e.preventDefault();
-        disable(map);
-
-        showActionBar();
-
-        map.getDiv().addEventListener("mousedown", async function (e) {
-            drawFreeHand(map);
-        });
     });
 }
 
@@ -63,5 +64,11 @@ function getLocationByPolygon() {
         if (isContaint) {
             addMarker(value);
         }
+    });
+}
+
+function loadAllPlace() {
+    places.forEach((value) => {
+        addMarker(value);
     });
 }

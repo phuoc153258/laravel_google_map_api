@@ -6,8 +6,7 @@ function hiddenActionBar() {
     document.getElementById("draw-action-js").classList.add("d-none");
     hideMarkers();
     emptyMarkerArray();
-    google.maps.event.clearListeners(map, "mouseup");
-    google.maps.event.clearListeners(map.getDiv(), "mousedown");
+    loadAllPlace();
     clearPolygon();
 }
 
