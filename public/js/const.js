@@ -3,6 +3,11 @@ const mapOptions = {
     center: new google.maps.LatLng(16.463623, 107.595239),
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     fullscreenControl: false,
+    mapTypeControl: true,
+    mapTypeControlOptions: {
+        style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+        position: google.maps.ControlPosition.LEFT_BOTTOM,
+    },
     styles: [
         {
             featureType: "poi",

@@ -7,6 +7,7 @@ let poly;
 
 function initialize() {
     addEventFreeHand(map);
+    loadAllPlace();
 }
 
 window.addEventListener("load", initialize);
