@@ -17,7 +17,7 @@
                 src="{{ asset('image/z-logo-default.svg') }}" alt=""></a>
     </nav>
     <div class="my-container row">
-        <div class="my-map col-7 p-0">
+        <div class="my-map col-7 pr-0">
             <div class="draw">
                 <div class="draw-action d-none p-2" id="draw-action-js">
                     <p><strong>Draw a shape </strong>around the region(s) you would like to live in</p>

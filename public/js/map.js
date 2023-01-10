@@ -56,15 +56,19 @@ function drawFreeHand(map) {
 }
 
 function getLocationByPolygon() {
+    emptyItemSideBar();
+    let str = "";
     places.forEach((value) => {
         const isContaint = google.maps.geometry.poly.containsLocation(
             value.latLng,
             poly
         );
         if (isContaint) {
+            str += itemSideBar(value);
             addMarker(value);
         }
     });
+    document.getElementById("list-side-bar-js").innerHTML = str;
 }
 
 function loadAllPlace() {

@@ -49,7 +49,7 @@ function itemSideBar(value) {
                         <img style="width: 100%;"
                         src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Hue%2C_le_pont_Trang_Tien.jpg"
                         alt="">
-                        <p class="my-text p-0 m-0" style="min-height: 40px;">Name: ${value.name}</p>
+                        <p class="my-text p-0 m-0" style="min-height: 50px;">Name: ${value.name}</p>
                         <p class="my-text p-0 m-0">Lat: ${value.latLng.lat}</p>
                         <p class="my-text p-0 m-0">Lng: ${value.latLng.lng}</p>
                     </div>
