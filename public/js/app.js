@@ -3,6 +3,8 @@ let map = new google.maps.Map(
     mapOptions
 );
 
+let poly;
+
 function initialize() {
     addEventFreeHand(map);
 }
