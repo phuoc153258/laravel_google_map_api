@@ -1,14 +1,34 @@
 html,
 body {
     height: 100%;
-    margin: 0
+    margin: 0;
+    overflow: hidden;
+}
+
+.my-navbar {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 999;
+    min-height: 70px;
+}
+
+.my-container {
+    height: calc(100% - 70px);
+    display: flex;
 }
 
 #map_canvas {
     height: 100%;
 }
 
-.btn {
+.my-map {
+    height: 100%;
+    position: relative;
+}
+.my-side-bar{
+    height: 100%;
+}
+
+.my-btn {
     background: none rgb(255, 255, 255);
     border: 0px;
     padding: 10px;
@@ -23,26 +43,33 @@ body {
 }
 
 .draw {
+    position: absolute;
     z-index: 999;
-    width: 100%;
-    position: fixed;
+    width: inherit;
+    top: 0;
+    right: 10px;
 }
 
-.draw-action{
+.draw-action {
     display: flex;
     justify-content: space-between;
     align-items: center;
     opacity: 1;
     color: #fff;
-    background-color: rgba(68,68,68,.7);
+    background-color: rgba(68, 68, 68, .7);
     padding: 0px 10px;
 }
 
-#drawpoly{
+#drawpoly {
     display: inline-block;
     margin: 10px;
 }
 
-.d-none{
+.my-d-none {
     display: none;
+}
+
+.my-text{
+    font-size: 14px;
+    font-weight: 500;
 }

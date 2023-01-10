@@ -68,7 +68,11 @@ function getLocationByPolygon() {
 }
 
 function loadAllPlace() {
+    emptyItemSideBar();
+    let str = "";
     places.forEach((value) => {
         addMarker(value);
+        str += itemSideBar(value);
     });
+    document.getElementById("list-side-bar-js").innerHTML = str;
 }
