@@ -1,8 +1,9 @@
+let map = new google.maps.Map(
+    document.getElementById("map_canvas"),
+    mapOptions
+);
+
 function initialize() {
-    map = new google.maps.Map(
-        document.getElementById("map_canvas"),
-        mapOptions
-    );
     addEventFreeHand(map);
 }
 

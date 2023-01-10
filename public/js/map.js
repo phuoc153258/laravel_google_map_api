@@ -1,4 +1,4 @@
-function disable() {
+function disable(map) {
     map.setOptions({
         draggable: false,
         zoomControl: false,
@@ -7,7 +7,7 @@ function disable() {
     });
 }
 
-function enable() {
+function enable(map) {
     map.setOptions({
         draggable: true,
         zoomControl: true,
@@ -17,39 +17,38 @@ function enable() {
 }
 
 function drawFreeHand(map) {
-    var move = google.maps.event.addListener(map, "mousemove", function (e) {
+    if (poly) clearPolygon();
+
+    poly = new google.maps.Polyline({
+        map: map,
+        clickable: false,
+    });
+
+    google.maps.event.addListener(map, "mousemove", function (e) {
         poly.getPath().push(e.latLng);
     });
 
-    google.maps.event.addListenerOnce(map, "mouseup", function (e) {
-        google.maps.event.removeListener(move);
-        var path = poly.getPath();
+    google.maps.event.addListener(map, "mouseup", function (e) {
+        google.maps.event.clearListeners(map, "mousemove");
+        const path = poly.getPath();
         poly.setMap(null);
         poly = new google.maps.Polygon({
             map: map,
             path: path,
         });
-
-        google.maps.event.clearListeners(map.getDiv(), "mousedown");
-
-        enable();
+        google.maps.event.clearListeners(map, "mousedown");
+        enable(map);
     });
 }
 
 function addEventFreeHand(map) {
     $("#drawpoly").click(function (e) {
         e.preventDefault();
-        disable();
+        disable(map);
 
-        if (poly) clearPolygon();
-
-        poly = new google.maps.Polyline({
-            map: map,
-            clickable: false,
-        });
         showActionBar();
 
-        map.getDiv().addEventListener("mousedown", function (e) {
+        map.getDiv().addEventListener("mousedown", async function (e) {
             drawFreeHand(map);
         });
     });
