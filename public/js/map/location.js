@@ -1,27 +1,25 @@
 function getLocationByPolygon() {
     emptyItemSideBar();
-    let str = "";
     places.forEach((value) => {
         const isContaint = google.maps.geometry.poly.containsLocation(
             value.latLng,
             poly
         );
         if (isContaint) {
-            str += itemSideBar(value);
-            addMarker(value);
+            const infowindow = renderInfoWindowItem(value);
+            let markerItem = addMarker(value, infowindow);
+            itemSideBar(value, infowindow, markerItem);
         }
     });
-    document.getElementById("list-side-bar-js").innerHTML = str;
 }
 
 function loadAllPlace() {
     emptyItemSideBar();
-    let str = "";
     places.forEach((value) => {
-        addMarker(value);
-        str += itemSideBar(value);
+        const infowindow = renderInfoWindowItem(value);
+        let markerItem = addMarker(value, infowindow);
+        itemSideBar(value, infowindow, markerItem);
     });
-    document.getElementById("list-side-bar-js").innerHTML = str;
 }
 
 function renderInfoWindowItem(value) {

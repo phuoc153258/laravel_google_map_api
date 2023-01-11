@@ -15,8 +15,7 @@ function clearPolygon() {
     poly = null;
 }
 
-function addMarker(value) {
-    const infowindow = renderInfoWindowItem(value);
+function addMarker(value, infowindow) {
     const marker = new google.maps.Marker({
         position: value.latLng,
         map,
@@ -39,6 +38,7 @@ function addMarker(value) {
     });
 
     markers.push(marker);
+    return marker;
 }
 
 function setMapOnAll(map) {
@@ -59,19 +59,29 @@ function emptyMarkerArray() {
     markers = [];
 }
 
-function itemSideBar(value) {
-    return `<div class="col-6 p-3">
-                <div class="card" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
-                    <div class="card-body">
-                        <img style="width: 100%;"
-                        src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Hue%2C_le_pont_Trang_Tien.jpg"
-                        alt="">
-                        <p class="my-text p-0 m-0" style="min-height: 50px;">Name: ${value.name}</p>
-                        <p class="my-text p-0 m-0">Lat: ${value.latLng.lat}</p>
-                        <p class="my-text p-0 m-0">Lng: ${value.latLng.lng}</p>
-                    </div>
+function itemSideBar(value, infowindow, markerItem) {
+    document.getElementById("list-side-bar-js").insertAdjacentHTML(
+        "beforeend",
+        `<div class="col-6 p-3" id="item-side-bar-js${value.id}">
+            <div class="card" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;" >
+                <div class="card-body">
+                    <img style="width: 100%;"
+                    src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Hue%2C_le_pont_Trang_Tien.jpg"
+                    alt="">
+                    <p class="my-text p-0 m-0" style="min-height: 50px;">Name: ${value.name}</p>
+                    <p class="my-text p-0 m-0">Lat: ${value.latLng.lat}</p>
+                    <p class="my-text p-0 m-0">Lng: ${value.latLng.lng}</p>
                 </div>
-            </div>`;
+            </div>
+        </div>`
+    );
+    let item = document.getElementById(`item-side-bar-js${value.id}`);
+    item.addEventListener("mouseover", () => {
+        openInfoWindow(infowindow, markerItem);
+    });
+    item.addEventListener("mouseout", () => {
+        hideInfoWindow(infowindow);
+    });
 }
 
 function emptyItemSideBar() {
@@ -87,4 +97,12 @@ function itemInfoWindow(value) {
                     <p class="my-text">${value.name}</p>
                 </div>
             </div>`;
+}
+
+function openInfoWindow(infowindow, marker) {
+    infowindow.open(map, marker);
+}
+
+function hideInfoWindow(infowindow) {
+    infowindow.close();
 }
