@@ -24,7 +24,8 @@ body {
     height: 100%;
     position: relative;
 }
-.my-side-bar{
+
+.my-side-bar {
     height: 100%;
 }
 
@@ -69,7 +70,20 @@ body {
     display: none;
 }
 
-.my-text{
+.my-text {
     font-size: 14px;
     font-weight: 500;
+}
+
+.gm-ui-hover-effect{
+    display: none !important;
+}
+
+.gm-style-iw{
+    padding: 10px !important;
+    overflow: hidden;
+}
+
+.gm-style-iw-d{
+    overflow: hidden !important;
 }
