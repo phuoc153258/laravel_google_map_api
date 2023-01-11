@@ -5,8 +5,7 @@ function addEventFreeHand(map) {
         disable(map);
 
         showActionBar();
-
-        map.getDiv().addEventListener("mousedown", async function (e) {
+        google.maps.event.addListener(map, "mousedown", function (e) {
             drawFreeHand(map);
         });
     });
@@ -26,12 +25,15 @@ function drawFreeHand(map) {
     google.maps.event.addListener(map, "mouseup", function (e) {
         google.maps.event.clearListeners(map, "mousemove");
         const path = poly.getPath();
+
         poly.setMap(null);
         poly = new google.maps.Polygon({
             map: map,
             path: path,
         });
-        google.maps.event.clearListeners(map.getDiv(), "mousedown");
+
+        google.maps.event.clearListeners(map, "mouseup");
+        google.maps.event.clearListeners(map, "mousedown");
 
         enable(map);
     });
