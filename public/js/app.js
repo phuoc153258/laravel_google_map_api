@@ -5,8 +5,9 @@ let map = new google.maps.Map(
 
 let poly;
 
-function initialize() {
+async function initialize() {
     addEventFreeHand(map);
+    await getListPlace();
     loadAllPlace();
 }
 
