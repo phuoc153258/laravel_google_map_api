@@ -16,11 +16,28 @@ function clearPolygon() {
 }
 
 function addMarker(value) {
+    const infowindow = renderInfoWindowItem(value);
     const marker = new google.maps.Marker({
         position: value.latLng,
         map,
         title: value.name,
     });
+
+    // marker.addListener("click", () => {
+    //     infowindow.open({
+    //         anchor: marker,
+    //         map,
+    //     });
+    // });
+
+    marker.addListener("mouseover", function () {
+        infowindow.open(map, this);
+    });
+
+    marker.addListener("mouseout", function () {
+        infowindow.close();
+    });
+
     markers.push(marker);
 }
 
@@ -59,4 +76,15 @@ function itemSideBar(value) {
 
 function emptyItemSideBar() {
     document.getElementById("list-side-bar-js").innerHTML = "";
+}
+
+function itemInfoWindow(value) {
+    return `<div class="row">
+                <div class="col-5 pr-2">
+                    <img class="w-100" src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Hue%2C_le_pont_Trang_Tien.jpg" alt="">
+                </div>
+                <div class="col-7 p-0">
+                    <p class="my-text">${value.name}</p>
+                </div>
+            </div>`;
 }

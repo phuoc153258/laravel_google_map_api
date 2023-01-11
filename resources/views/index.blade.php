@@ -54,10 +54,13 @@
         </div>
     </div>
 
+
     <script src="{{ asset('js/library/jquery.min.js') }}"></script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3MF7G5w46dVqk3y2RhSBUv_iin5tFJIs"></script>
-    <script src="{{ asset('js/map.js') }}"></script>
+    <script src="{{ asset('js/map/draw.js') }}"></script>
+    <script src="{{ asset('js/map/index.js') }}"></script>
+    <script src="{{ asset('js/map/location.js') }}"></script>
     <script src="{{ asset('js/DOM.js') }}"></script>
     <script src="{{ asset('js/const.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
