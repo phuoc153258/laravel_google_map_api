@@ -14,7 +14,7 @@ class PaginateService implements IPaginateService
 
     public function paginate(BasePaginateRequestDTO $paginateOption, Builder $query): mixed
     {
-        if (!$paginateOption->option->getIsPaginate()) return $query->get();
+        if (!$paginateOption->option->getIsPaginate()) return ['data' => $query];
 
         if ($paginateOption->option->getSearch())
             $query

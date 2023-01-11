@@ -61,6 +61,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3MF7G5w46dVqk3y2RhSBUv_iin5tFJIs"></script>
     <script src="{{ asset('js/map/draw.js') }}"></script>
+    <script src="{{ asset('js/map/place.js') }}"></script>
     <script src="{{ asset('js/map/index.js') }}"></script>
     <script src="{{ asset('js/map/location.js') }}"></script>
     <script src="{{ asset('js/DOM.js') }}"></script>
