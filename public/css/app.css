@@ -87,3 +87,17 @@ body {
 .gm-style-iw-d{
     overflow: hidden !important;
 }
+
+.gm-style-mtc{
+    bottom: 15px !important;
+    right: 30px !important;
+}
+
+.gm-style-mtc ul{
+    top: -180% !important;
+    max-width: 100px !important;
+}
+
+.gm-style-mtc button {
+    min-width: 100px !important;
+}

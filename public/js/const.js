@@ -3,11 +3,14 @@ const mapOptions = {
     center: new google.maps.LatLng(16.463623, 107.595239),
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     fullscreenControl: false,
+
     mapTypeControl: true,
     mapTypeControlOptions: {
-        style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-        position: google.maps.ControlPosition.LEFT_BOTTOM,
+        style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+        position: google.maps.ControlPosition.RIGHT_BOTTOM,
+        mapTypeIds: ["roadmap", "satellite"],
     },
+    streetViewControl: false,
     styles: [
         {
             featureType: "poi",
@@ -15,8 +18,13 @@ const mapOptions = {
         },
     ],
 };
-
+// mapTypeControl: true,
+// mapTypeControlOptions: {
+//     style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+// },
 let places = [];
+
+let markers = [];
 
 // const places = [
 //     {
@@ -85,5 +93,3 @@ let places = [];
 //         latLng: { lat: 16.4651714664595, lng: 107.58694822315452 },
 //     },
 // ];
-
-let markers = [];
