@@ -1,3 +1,8 @@
+let map = new google.maps.Map(
+    document.getElementById("map_canvas"),
+    mapOptions
+);
+
 const mapOptions = {
     zoom: 16,
     center: new google.maps.LatLng(16.463623, 107.595239),
@@ -18,13 +23,12 @@ const mapOptions = {
         },
     ],
 };
-// mapTypeControl: true,
-// mapTypeControlOptions: {
-//     style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-// },
+
 let places = [];
 
 let markers = [];
+
+let poly;
 
 // const places = [
 //     {
@@ -93,3 +97,8 @@ let markers = [];
 //         latLng: { lat: 16.4651714664595, lng: 107.58694822315452 },
 //     },
 // ];
+
+// mapTypeControl: true,
+// mapTypeControlOptions: {
+//     style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+// },
