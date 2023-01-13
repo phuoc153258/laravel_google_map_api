@@ -37,6 +37,12 @@ function addMarker(value, infowindow) {
         infowindow.close();
     });
 
+    marker.addListener("click", () => {
+        emptyInfoModalPlace();
+        renderInfoModalPlace(value.id);
+        $("#exampleModal").modal("show");
+    });
+
     markers.push(marker);
     return marker;
 }
@@ -66,7 +72,7 @@ function itemSideBar(value, infowindow, markerItem) {
             <div class="card" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;" >
                 <div class="card-body">
                     <img style="width: 100%;"
-                    src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Hue%2C_le_pont_Trang_Tien.jpg"
+                    src="${value.origin_image}"
                     alt="">
                     <p class="my-text p-0 m-0" style="min-height: 50px;">Name: ${value.name}</p>
                     <p class="my-text p-0 m-0">Lat: ${value.latLng.lat}</p>
@@ -91,7 +97,7 @@ function emptyItemSideBar() {
 function itemInfoWindow(value) {
     return `<div class="row">
                 <div class="col-5 pr-2">
-                    <img class="w-100" src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Hue%2C_le_pont_Trang_Tien.jpg" alt="">
+                    <img class="w-100" src="${value.origin_image}" alt="">
                 </div>
                 <div class="col-7 p-0">
                     <p class="my-text">${value.name}</p>
@@ -105,4 +111,38 @@ function openInfoWindow(infowindow, marker) {
 
 function hideInfoWindow(infowindow) {
     infowindow.close();
+}
+
+function renderInfoModalPlace(id) {
+    const place = places.find((x) => x.id === id);
+    document.getElementById("origin_image-place-js").src = place.origin_image;
+    place.place_image.forEach((x) => {
+        document.getElementById(
+            "list_image-place-js"
+        ).innerHTML += `<div class="col-6 p-2">
+                            <img class="w-100 rounded"
+                            style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;"
+                            src="${x.image}" alt="">
+                        </div>`;
+    });
+
+    document.getElementById("place_name-place-js").innerHTML = place.name;
+    document.getElementById("place_type-place-js").innerHTML =
+        place.place_type.name;
+    document.getElementById("address-place-js").innerHTML = place.address;
+    document.getElementById("email-place-js").innerHTML = place.email;
+    document.getElementById("phone_number-place-js").innerHTML =
+        place.phone_number;
+    document.getElementById("plus_code-place-js").innerHTML = place.plus_code;
+}
+
+function emptyInfoModalPlace() {
+    document.getElementById("origin_image-place-js").src = "";
+    document.getElementById("list_image-place-js").innerHTML = "";
+    document.getElementById("place_name-place-js").innerHTML = "";
+    document.getElementById("place_type-place-js").innerHTML = "";
+    document.getElementById("address-place-js").innerHTML = "";
+    document.getElementById("email-place-js").innerHTML = "";
+    document.getElementById("phone_number-place-js").innerHTML = "";
+    document.getElementById("plus_code-place-js").innerHTML = "";
 }
