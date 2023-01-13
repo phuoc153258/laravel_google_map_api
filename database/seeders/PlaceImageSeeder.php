@@ -64,51 +64,51 @@ class PlaceImageSeeder extends Seeder
             'place_id' => 12,
         ]);
         PlaceImage::create([
-            'image' => 'image/cinestar-1.jpg',
+            'image' => 'image/cinestar-1.png',
             'place_id' => 1,
         ]);
         PlaceImage::create([
-            'image' => 'image/cinestar-1.jpg',
+            'image' => 'image/cinestar-1.png',
             'place_id' => 2,
         ]);
         PlaceImage::create([
-            'image' => 'image/cinestar-1.jpg',
+            'image' => 'image/cinestar-1.png',
             'place_id' => 3,
         ]);
         PlaceImage::create([
-            'image' => 'image/cinestar-1.jpg',
+            'image' => 'image/cinestar-1.png',
             'place_id' => 4,
         ]);
         PlaceImage::create([
-            'image' => 'image/cinestar-1.jpg',
+            'image' => 'image/cinestar-1.png',
             'place_id' => 5,
         ]);
         PlaceImage::create([
-            'image' => 'image/cinestar-1.jpg',
+            'image' => 'image/cinestar-1.png',
             'place_id' => 6,
         ]);
         PlaceImage::create([
-            'image' => 'image/cinestar-1.jpg',
+            'image' => 'image/cinestar-1.png',
             'place_id' => 7,
         ]);
         PlaceImage::create([
-            'image' => 'image/cinestar-1.jpg',
+            'image' => 'image/cinestar-1.png',
             'place_id' => 8,
         ]);
         PlaceImage::create([
-            'image' => 'image/cinestar-1.jpg',
+            'image' => 'image/cinestar-1.png',
             'place_id' => 9,
         ]);
         PlaceImage::create([
-            'image' => 'image/cinestar-1.jpg',
+            'image' => 'image/cinestar-1.png',
             'place_id' => 10,
         ]);
         PlaceImage::create([
-            'image' => 'image/cinestar-1.jpg',
+            'image' => 'image/cinestar-1.png',
             'place_id' => 11,
         ]);
         PlaceImage::create([
-            'image' => 'image/cinestar-1.jpg',
+            'image' => 'image/cinestar-1.png',
             'place_id' => 12,
         ]);
         PlaceImage::create([

@@ -16,7 +16,6 @@
 
 <body>
 
-    <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <a href="#" data-dismiss="modal" aria-label="Close"
@@ -30,8 +29,9 @@
                             style=" height: 500px;
                         overflow: auto;">
                             <img style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;" class="w-100 rounded"
-                                src="{{ asset('image/quoc-hoc-origin.jpg') }}" alt="">
-                            <div class="row">
+                                src="{{ asset('image/quoc-hoc-origin.jpg') }}" alt=""
+                                id="origin_image-place-js">
+                            <div class="row" id="list_image-place-js">
                                 <div class="col-6 p-2"><img class="w-100 rounded"
                                         style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;"
                                         src="{{ asset('image/quoc-hoc-1.jpg') }}" alt="">
@@ -58,7 +58,7 @@
                             style=" height: 500px;
                         overflow: auto;">
                             <div class="location-header border-bottom">
-                                <h3>Trường THPT Hai Bà Trưng</h3>
+                                <h3 id="place_name-place-js">Trường THPT Hai Bà Trưng</h3>
                                 <div class="location-header-review d-flex" style="gap: 0 10px;height: 25px !important;">
                                     <p class="m-0">4.7</p>
                                     <div class="d-flex" style="gap: 0 5px;">
@@ -70,7 +70,7 @@
                                     </div>
                                     <p>150 review</p>
                                 </div>
-                                <p class="mb-1">Trường Trung Học Phổ Thông</p>
+                                <p class="mb-1" id="place_type-place-js">Trường Trung Học Phổ Thông</p>
                             </div>
                             <div class="border-bottom d-flex justify-content-between p-3">
                                 <div class="">
@@ -117,19 +117,21 @@
                             <div class="border-bottom">
                                 <div class="d-flex p-3" style="gap: 0 10px;">
                                     <a href=""><i class="fa-solid fa-location-pin"></i></a>
-                                    <p class="m-0">14 Lê Lợi, Vĩnh Ninh, Thành phố Huế, Thừa Thiên Huế, Vietnam</p>
+                                    <p class="m-0" id="address-place-js">14 Lê Lợi, Vĩnh Ninh, Thành phố Huế, Thừa
+                                        Thiên Huế, Vietnam</p>
                                 </div>
                                 <div class="d-flex p-3" style="gap: 0 10px;">
                                     <a href=""><i class="fa-solid fa-envelope"></i></a>
-                                    <p class="m-0">thpthaibatrung@gmail.com</p>
+                                    <p class="m-0" id="email-place-js">thpthaibatrung@gmail.com</p>
                                 </div>
                                 <div class="d-flex p-3" style="gap: 0 10px;">
                                     <a href=""><i class="fa-solid fa-phone"></i></a>
-                                    <p class="m-0">+84123456789</p>
+                                    <p class="m-0" id="phone_number-place-js">+84123456789</p>
                                 </div>
                                 <div class="d-flex p-3" style="gap: 0 10px;">
                                     <a href=""><i class="fa-solid fa-plus"></i></a>
-                                    <p class="m-0">FH6Q+9W Thành phố Huế, Thua Thien Hue, Vietnam</p>
+                                    <p class="m-0" id="plus_code-place-js">FH6Q+9W Thành phố Huế, Thua Thien Hue,
+                                        Vietnam</p>
                                 </div>
                                 <div class="d-flex p-3" style="gap: 0 10px;">
                                     <a href=""><i class="fa-solid fa-mobile"></i></a>
@@ -175,17 +177,6 @@
                 <h3 class="p-3">Real Estate & Homes For Sale</h3>
                 <div class="container">
                     <div class="row" id="list-side-bar-js" style="overflow: auto; height: 500px;">
-                        {{-- <div class="col-6">
-                            <div class="card" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
-                                <div class="card-body">
-                                    <img style="width: 100%;"
-                                        src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Hue%2C_le_pont_Trang_Tien.jpg"
-                                        alt="">
-                                    <p class="my-text p-2 m-0">Name: Truong tien Brige</p>
-                                    <p class="my-text p-2 m-0">Coordinates: Truong tien Brige</p>
-                                </div>
-                            </div>
-                        </div> --}}
                     </div>
                 </div>
             </div>
