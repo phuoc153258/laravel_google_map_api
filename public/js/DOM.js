@@ -62,7 +62,7 @@ function emptyMarkerArray() {
 function itemSideBar(value, infowindow, markerItem) {
     document.getElementById("list-side-bar-js").insertAdjacentHTML(
         "beforeend",
-        `<div class="col-6 p-3" id="item-side-bar-js${value.id}">
+        `<div class="col-6 p-3" id="item-side-bar-js${value.id}"  data-toggle="modal" data-target="#exampleModal">
             <div class="card" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;" >
                 <div class="card-body">
                     <img style="width: 100%;"
