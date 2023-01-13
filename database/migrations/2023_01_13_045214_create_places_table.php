@@ -18,6 +18,12 @@ return new class extends Migration
             $table->string('name');
             $table->double('lat');
             $table->double('lng');
+            $table->string('origin_image');
+            $table->string('address');
+            $table->string('email');
+            $table->string('phone_number');
+            $table->string('plus_code');
+            $table->foreignId('place_type_id')->references('id')->on('place_types')->onDelete('cascade');
             $table->timestamps();
         });
     }

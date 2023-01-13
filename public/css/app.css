@@ -75,25 +75,25 @@ body {
     font-weight: 500;
 }
 
-.gm-ui-hover-effect{
+.gm-ui-hover-effect {
     display: none !important;
 }
 
-.gm-style-iw{
+.gm-style-iw {
     padding: 10px !important;
     overflow: hidden;
 }
 
-.gm-style-iw-d{
+.gm-style-iw-d {
     overflow: hidden !important;
 }
 
-.gm-style-mtc{
+.gm-style-mtc {
     bottom: 15px !important;
     right: 30px !important;
 }
 
-.gm-style-mtc ul{
+.gm-style-mtc ul {
     top: -180% !important;
     max-width: 100px !important;
 }
